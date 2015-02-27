@@ -25,9 +25,9 @@ var sharedAccessKey = 'S4lxDeOkdGFgi7xbIVdBakWpxDaPitKsGFUPFxZKT14=';
 var currentDate = new Date();
 var expiry = currentDate.getTime() + 3600;
 
-var sas = require('../index');
+var sas = require('shared-access-signature');
 var signature = sas.generateServiceBusSignature(url, sharedAccessKeyName, sharedAccessKey, expiry);
-console.log(\signature);
+console.log(signature);
 ```
 
 ## Contributions
