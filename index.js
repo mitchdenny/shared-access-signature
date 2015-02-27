@@ -6,11 +6,8 @@ function SignatureGenerator()
 	var self = this;
 
 	return {
-		generateSignature: function(url, sharedAccessKeyName, sharedAccessKey) {
-			var epochTime = new Date().getTime();
-			var expiryTime = epochTime + 3600;
-
-			var data = util.format('%s\n%s', encodeURIComponent(url), expiryTime);
+		generateServiceBusSignature: function(url, sharedAccessKeyName, sharedAccessKey, expiry) {
+			var data = util.format('%s\n%s', encodeURIComponent(url), expiry);
 
 			var algorithm = crypto.createHmac('sha256', sharedAccessKey);
 			algorithm.update(data);
@@ -20,7 +17,7 @@ function SignatureGenerator()
 				'SharedAccessSignature sr=%s&sig=%s&se=%s&skn=%s',
 				encodeURIComponent(url),
 				encodeURIComponent(signature),
-				encodeURIComponent(expiryTime),
+				encodeURIComponent(expiry),
 				encodeURIComponent(sharedAccessKeyName)
 				);
 
