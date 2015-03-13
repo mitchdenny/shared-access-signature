@@ -30,11 +30,13 @@ var signature = sas.generateServiceBusSignature(url, sharedAccessKeyName, shared
 console.log(signature);
 ```
 
-The expiry parameter can also take a Date object which is helpful, I recommend checking out the awesome [momentjs](http://momentjs.com/) library to deal with dates and quickly generate Date objects projected into the future. 
+The expiry parameter can also take a Date object which is helpful, I recommend checking out the awesome [momentjs](http://momentjs.com/) library to deal with dates and quickly generate Date objects projected into the future.
 
 ```js
+...
 var moment = require('moment');
 var expiry = moment().add(1, 'day').toDate();
+var signature = sas.generateServiceBusSignature(url, sharedAccessKeyName, sharedAccessKey, expiry);
 ```
 
 ## Contributions
