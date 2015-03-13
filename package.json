@@ -35,6 +35,7 @@
     "grunt-release": "latest"
   },
   "dependencies": {
+    "moment": "^2.9.0",
     "nopt": "^3.0.1"
   }
 }
