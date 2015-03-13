@@ -1,6 +1,6 @@
 {
   "name": "shared-access-signature",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "This package provides a simple API for generating a Shared Access Signature for use with Microsoft Azure services.",
   "main": "index.js",
   "scripts": {
