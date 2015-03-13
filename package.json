@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "bin": {
-    "generate-sas": "./bin/generate-sas.js"
+    "generate-sas": "./bin/generate-sas"
   },
   "repository": {
     "type": "git",
