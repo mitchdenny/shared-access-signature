@@ -23,7 +23,7 @@ var url = 'https://namespace.servicebus.windows.net/hubname/publishers/devicenam
 var sharedAccessKeyName = 'sample-key';
 var sharedAccessKey = 'S4lxDeOkdGFgi7xbIVdBakWpxDaPitKsGFUPFxZKT14=';
 var currentDate = new Date();
-var expiry = currentDate.getTime() + 3600;
+var expiry = currentDate.getTime() / 1000 + 3600; // We require expiry time in seconds since epoch.
 
 var sas = require('shared-access-signature');
 var signature = sas.generateServiceBusSignature(url, sharedAccessKeyName, sharedAccessKey, expiry);
